@@ -1,7 +1,6 @@
 ﻿using System.Drawing;
 using System.IO;
 using TechTalk.SpecFlow;
-using TestStackFramework;
 using TestStackFramework.framework;
 using TestStackFramework.utils;
 using Views;
@@ -14,7 +13,7 @@ namespace Tests.steps
         [Given(@"All old instances of app were closed")]
         public void GivenAllOldInstancesOfAppAreClosed()
         {
-            ProcessesUtil.CloseAllProcessesByName(Settings.Default.processName);
+            ProcessesUtil.CloseAllProcessesByName(ConfigUtil.GetConfigValue("processName"));
         }
         
         [Given(@"new instance was open")]

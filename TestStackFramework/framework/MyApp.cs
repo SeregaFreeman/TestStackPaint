@@ -2,6 +2,7 @@
 using System.Linq;
 using TestStack.White;
 using TestStack.White.UIItems.WindowItems;
+using TestStackFramework.utils;
 
 namespace TestStackFramework.framework
 {
@@ -18,7 +19,7 @@ namespace TestStackFramework.framework
 
         public static MyApp Launch()
         {
-            var app = Application.Launch(Path.Combine(Settings.Default.Path, Settings.Default.EXE));
+            var app = Application.Launch(Path.Combine(ConfigUtil.GetConfigValue("Path"), ConfigUtil.GetConfigValue("EXE")));
             var window = app.GetWindows().FirstOrDefault();
             return new MyApp(app, window);
         }

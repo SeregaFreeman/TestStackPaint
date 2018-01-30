@@ -71,11 +71,17 @@ namespace Tests.Features
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
- testRunner.Given("All old instances of app are closed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("All old instances of app were closed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
-     testRunner.And("new instance is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+     testRunner.And("new instance was open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 6
     testRunner.When("user opens an image \'img7.jpg\' from \'C:\\Users\\s.pogorelov\\Pictures\\\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+     testRunner.And("user cuts all selected image area", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+  testRunner.And("user closes app without applying changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
+ testRunner.Then("image is not changed.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

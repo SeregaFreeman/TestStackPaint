@@ -4,9 +4,9 @@ using TestStackFramework.framework.elements;
 
 namespace Views
 {
-    class ClipboardView
+    public class ClipboardView
     {
-        public static Button CutButton =>
-            Button.Get(SearchCriteria.ByControlType(ControlType.Button).AndByText("Cut"), "Cut button");
+        public static Button ButtonCut =>
+            Button.Get(SearchCriteria.ByText("Cut"), "Cut");
     }
 }

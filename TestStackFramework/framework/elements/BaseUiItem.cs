@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System.Windows.Automation;
+﻿using System.Windows.Automation;
 using TestStack.White;
 using NUnit.Framework;
 using TestStack.White.UIItems;
@@ -56,9 +55,30 @@ namespace TestStackFramework.framework.elements
             return new UIItem(window.AutomationElement.FindFirst(treeScope, new PropertyCondition(property, value)), new NullActionListener());
         }
 
+        public static UIItem FindItemByIndex(TreeScope treeScope, Condition condition, int index)
+        {
+            var elements = Scope.DefaultWindow.AutomationElement.FindAll(treeScope, condition);
+            UIItem element = null;
+            for (var i = 0; i < elements.Count; i++)
+            {
+                if (i == index)
+                {
+                    element = new UIItem(elements[i], new NullActionListener());
+                }
+            }
+            Assert.NotNull(element);
+            return element;
+        }
+
         public void Click()
         {
             _uiItem.Click();
+            
+        }
+
+        public void RaiseClickEvent()
+        {
+            _uiItem.RaiseClickEvent();
         }
 
     }

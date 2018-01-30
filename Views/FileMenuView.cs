@@ -6,6 +6,6 @@ namespace Views
 {
     public class FileMenuView
     {
-        public static MenuItem OpenMenuItem => MenuItem.Get(SearchCriteria.ByControlType(ControlType.MenuItem).AndByText("Open"), "Open file");
+        public static MenuItem MenuItemOpen => MenuItem.Get(SearchCriteria.ByControlType(ControlType.MenuItem).AndByText("Open"), "Open file");
     }
 }

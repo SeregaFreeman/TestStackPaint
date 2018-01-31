@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Configuration;
+using System.Drawing;
 using System.IO;
 using TechTalk.SpecFlow;
 using TestStackFramework.framework;
@@ -13,13 +14,13 @@ namespace Tests.steps
         [Given(@"All old instances of app were closed")]
         public void GivenAllOldInstancesOfAppAreClosed()
         {
-            ProcessesUtil.CloseAllProcessesByName(ConfigUtil.GetConfigValue("processName"));
+            ProcessesUtil.CloseAllProcessesByName(ConfigurationManager.AppSettings["processName"]);
         }
         
         [Given(@"new instance was open")]
         public void GivenNewInstanceIsOpen()
         {
-            Scope.Application = MyApp.Launch();
+            Scope.Application = MyApp.Launch(ConfigurationManager.AppSettings["Path"], ConfigurationManager.AppSettings["EXE"]);
             Scope.DefaultWindow = MyApp.Window;
         }
         

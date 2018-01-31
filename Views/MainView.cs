@@ -1,7 +1,6 @@
 ﻿using System.Windows.Automation;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.WindowItems;
 using TestStackFramework.framework;
 using TestStackFramework.framework.elements;
 

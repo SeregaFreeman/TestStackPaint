@@ -66,17 +66,16 @@
     <Compile Include="framework\elements\TextBox.cs" />
     <Compile Include="framework\elements\ToolBar.cs" />
     <Compile Include="framework\MyApp.cs" />
-    <Compile Include="framework\MyWindow.cs" />
     <Compile Include="framework\Scope.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utils\AssertionUtil.cs" />
-    <Compile Include="utils\ConfigUtil.cs" />
     <Compile Include="utils\ImageUtil.cs" />
     <Compile Include="utils\LoggerUtil.cs" />
     <Compile Include="utils\ProcessesUtil.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

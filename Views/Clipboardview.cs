@@ -1,5 +1,4 @@
-﻿using System.Windows.Automation;
-using TestStack.White.UIItems.Finders;
+﻿using TestStack.White.UIItems.Finders;
 using TestStackFramework.framework.elements;
 
 namespace Views

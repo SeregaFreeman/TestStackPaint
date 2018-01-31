@@ -88,6 +88,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>PaintTest.feature.cs</LastGenOutput>
     </None>
+    <None Include="Logs\LogFile.log" />
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
     <None Include="SpecRunTestProfile.xsd">
@@ -97,9 +98,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\TestStackFramework\TestStackFramework.csproj">
       <Project>{C1C11921-87FD-46D1-A009-5919A4173CBA}</Project>

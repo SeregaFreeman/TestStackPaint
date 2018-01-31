@@ -18,9 +18,10 @@ namespace TestStackFramework.utils
           
             if (firstBitmap.Equals(secondBitmap))
             {
+                LoggerUtil.Info("Images are equal");
                 return true;
             }
-
+            LoggerUtil.Error("Images are not equal");
             return false;
         }
     }

@@ -9,6 +9,7 @@ namespace TestStackFramework.utils
             Process[] processes = Process.GetProcessesByName(processName);
             foreach (Process p in processes)
             {
+                LoggerUtil.Info($"Killing all processes with name: {processName}");
                 p.Kill();
             }
         }

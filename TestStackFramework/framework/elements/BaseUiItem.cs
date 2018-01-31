@@ -34,11 +34,12 @@ namespace TestStackFramework.framework.elements
             try
             {
                 _uiItem = window.Get<T>(searchCriteria);
+                LoggerUtil.Info($"Element {_uiItem.Name} is found");
                 return _uiItem;
             }
             catch (AutomationException ex)
             {
-                LoggerUtil.Info($"Element is not found: {ex}");
+                LoggerUtil.Error($"Element is not found: {ex}");
             }
 
             Assert.NotNull(_uiItem, "Element is not found");
@@ -52,7 +53,12 @@ namespace TestStackFramework.framework.elements
                 window = Scope.DefaultWindow;
             }
 
-            return new UIItem(window.AutomationElement.FindFirst(treeScope, new PropertyCondition(property, value)), new NullActionListener());
+            UIItem element =
+                new UIItem(window.AutomationElement.FindFirst(treeScope, new PropertyCondition(property, value)),
+                    new NullActionListener());
+            AssertionUtil.AssertNotNull(element, "Element is not found");
+            LoggerUtil.Info($"Element {element.Name} is found");
+            return element;
         }
 
         public static UIItem FindItemByIndex(TreeScope treeScope, Condition condition, int index)
@@ -66,18 +72,21 @@ namespace TestStackFramework.framework.elements
                     element = new UIItem(elements[i], new NullActionListener());
                 }
             }
-            Assert.NotNull(element);
+            AssertionUtil.AssertNotNull(element, "Element is not found");
+            LoggerUtil.Info($"Element {element.Name} is found");
             return element;
         }
 
         public void Click()
         {
+            LoggerUtil.Info($"Clicking {_uiItem.Name}");
             _uiItem.Click();
             
         }
 
         public void RaiseClickEvent()
         {
+            LoggerUtil.Info($"RaiseClicking {_uiItem.Name}");
             _uiItem.RaiseClickEvent();
         }
 
